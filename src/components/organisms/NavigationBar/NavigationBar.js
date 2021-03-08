@@ -1,21 +1,18 @@
 import React from 'react'
 import NavigationLinks from '../../molecules/NavigationLinks/NavigationLinks'
-import {
-  Accent,
-  ContactButton,
-  LogoStyled,
-  NavContainer,
-} from './NavigationBar.style'
+import { LogoStyled, NavWrapper } from './NavigationBar.style'
+import Accent from '../../atoms/Accent/Accent'
+import Button from '../../atoms/Button/Button'
 
 const NavigationBar = () => {
   return (
-    <NavContainer>
+    <NavWrapper>
       <LogoStyled to={'/'}>
         Mieć <Accent>Pasje</Accent>
       </LogoStyled>
       <NavigationLinks />
-      <ContactButton>Kontakt</ContactButton>
-    </NavContainer>
+      <Button text="Kontakt" />
+    </NavWrapper>
   )
 }
 

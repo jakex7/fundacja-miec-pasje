@@ -1,83 +1,91 @@
-import React from 'react'
-import styled from 'styled-components'
-
-const HeroContainer = styled.main`
-  min-height: 500px;
-  height: 80vh;
-  background-color: ${({ theme }) => theme.lightGray};
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: calc(90px + 3rem) 4rem 3rem;
-
-  position: relative;
-  &::before {
-    left: 3rem;
-  }
-  &::after {
-    right: 3rem;
-  }
-  &::before,
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    width: 2px;
-    height: 100vh;
-    background-color: ${({ theme }) => theme.darkGray};
-  }
-`
-const HeroText = styled.div`
-  flex: 1;
-  margin-left: 1rem;
-  max-width: 350px;
-`
-const HeroImage = styled.div`
-  flex: 1;
-  margin-right: 1rem;
-  max-width: 350px;
-  svg {
-    width: 100%;
-  }
-`
-const HeroHeader = styled.h1``
+import React, { useEffect } from 'react'
+import anime from 'animejs'
+import LogoImage from '../../../assets/images/logo.svg'
+import Accent from '../../atoms/Accent/Accent'
+import {
+  HeroWrapper,
+  HeroImage,
+  HeroText,
+  Paragraph,
+} from './HeroSection.style'
+import Button from '../../atoms/Button/Button'
+import Header from '../../atoms/Header/Header'
 
 const HeroSection = () => {
+  useEffect(() => {
+    const tl = anime.timeline({
+      easing: 'easeInOutExpo',
+      duration: 2000,
+    })
+
+    tl.add(
+      {
+        targets: `${HeroText} h1`,
+        opacity: [0, 1],
+        translateY: [100, 0],
+      },
+      300
+    )
+      .add(
+        {
+          targets: `${Paragraph}`,
+          opacity: [0, 1],
+          translateY: [100, 0],
+        },
+        1000
+      )
+      .add(
+        {
+          targets: `${HeroImage}`,
+          opacity: [0, 1],
+          translateX: [-100, 0],
+        },
+        1250
+      )
+      .add(
+        {
+          targets: `${HeroText} button`,
+          opacity: [0, 1],
+          translateY: [100, 0],
+        },
+        1500
+      )
+
+    anime({
+      targets: `${HeroImage} #anvil`,
+      translateY: [-10, 0],
+      duration: 4000,
+      loop: true,
+      easing: 'linear',
+      direction: 'alternate',
+    })
+    anime({
+      targets: `${HeroImage} #pitcher`,
+      translateY: [0, -10],
+      translateX: [0, 5],
+      duration: 4000,
+      loop: true,
+      easing: 'linear',
+      direction: 'alternate',
+    })
+  }, [])
   return (
-    <HeroContainer>
+    <HeroWrapper>
       <HeroImage>
-        <svg
-          className="test"
-          width="432"
-          height="388"
-          viewBox="0 0 432 388"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M331.882 122.279C334.48 102.982 337.077 85.1696 335.593 78.49C334.109 71.8104 335.964 61.4199 304.793 53.627C273.621 45.8341 220.555 32.846 214.989 28.0218C209.422 23.1977 182.333 4.27209 177.88 6.12754C173.427 7.98299 165.634 48.8028 194.208 71.0682C208.545 82.24 214.567 100.886 215.697 118.568M331.882 122.279C330.484 132.664 316.618 136.17 299.597 136.962M331.882 122.279C330.75 125.742 329.832 135.86 335.222 148.626M331.882 122.279C381.362 116.408 432.597 150.286 425.026 205.032C420.201 239.914 400.427 255.129 377.473 260.695M335.222 148.626C340.417 160.29 339.675 160.13 357.116 199.465C365.353 218.043 373.259 239.352 377.473 260.695M335.222 148.626C330.027 136.962 336.335 136.962 299.597 136.962M299.597 136.962C292.918 136.962 273.25 136.962 248.016 136.962M215.697 118.568C216.105 124.958 215.874 131.222 215.166 136.962C214.699 140.745 214.025 144.299 213.19 147.513M215.697 118.568C215.843 122.046 218.103 127.496 224.637 131.563M248.016 136.962C223.375 136.962 214.532 143.996 213.19 147.513M248.016 136.962C237.095 136.962 229.622 134.665 224.637 131.563M213.19 147.513C211.81 152.822 209.99 157.199 207.938 160.13C197.548 174.973 159.697 259.211 165.634 294.093C171.571 328.975 195.692 379.815 233.914 379.815C272.137 379.815 296.257 379.815 315.925 379.815C335.593 379.815 355.632 366.827 373.073 328.604C382.277 308.434 382.18 284.543 377.473 260.695M213.19 147.513L224.637 131.563"
-            stroke="black"
-            stroke-width="12"
-          />
-          <path
-            d="M116.279 169.778C107.67 172.747 85.9733 172.994 76.2013 172.747H6.06539C3.98729 225.887 51.9568 244.12 76.2013 246.594C87.3367 246.616 101.011 246.641 116.279 246.664M116.279 169.778C127.041 166.067 137.802 166.809 145.966 167.18C152.497 167.477 322.357 167.304 406.471 167.18C405.729 193.528 389.624 246.297 331.14 246.594C324.808 246.626 317.569 246.652 309.617 246.674M116.279 169.778V246.664M116.279 246.664C175.118 246.752 257.616 246.817 309.617 246.674M116.279 246.664C129.886 252.454 157.321 271.679 158.212 302.257C159.325 340.479 120.732 349.756 99.2089 351.241C77.6857 352.725 68.4084 381.67 99.2089 381.67C130.009 381.67 276.59 382.412 315.925 381.67C355.261 380.928 349.323 350.128 331.14 351.241C312.956 352.354 262.117 340.108 265.828 302.257C268.797 271.976 296.257 252.585 309.617 246.674"
-            stroke="black"
-            stroke-width="12"
-          />
-        </svg>
+        <LogoImage />
       </HeroImage>
       <HeroText>
-        <HeroHeader>
+        <Header>
           Fundacja <br />
-          Mieć Pasje
-        </HeroHeader>
-        <p>
+          Mieć <Accent underline>Pasje</Accent>
+        </Header>
+        <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
           commodi est inventore nesciunt? Accusamus expedita.
-        </p>
+        </Paragraph>
+        <Button text="Więcej informacji" />
       </HeroText>
-    </HeroContainer>
+    </HeroWrapper>
   )
 }
 

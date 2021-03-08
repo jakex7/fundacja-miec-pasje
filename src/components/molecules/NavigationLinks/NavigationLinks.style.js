@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const NavigationLinksContainer = styled.ul`
+export const NavigationLinksWrapper = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
