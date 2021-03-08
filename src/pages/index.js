@@ -1,9 +1,10 @@
-import React from "react"
-import HomeLayout from "../components/templates/HomeLayout"
+import React from 'react'
+import HomeLayout from '../components/templates/HomeLayout'
+import HeroSection from '../components/organisms/HeroSection/HeroSection'
 
 const IndexPage = () => (
   <HomeLayout>
-    test
+    <HeroSection />
   </HomeLayout>
 )
 

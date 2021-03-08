@@ -11,6 +11,8 @@ export const NavContainer = styled.nav`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  height: 90px;
+  z-index: 100;
 `
 
 export const LogoStyled = styled(Link)`
@@ -34,6 +36,7 @@ export const ContactButton = styled.button`
   cursor: pointer;
   transition: color 0.3s ease-in;
   font-size: 1rem;
+  z-index: 101;
 
   &:hover {
     color: #fff;
