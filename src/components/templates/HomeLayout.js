@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import NavigationBar from '../organisms/NavigationBar/NavigationBar'
 import GlobalStyle from '../../assets/styles/GlobalStyle'
 import { ThemeProvider } from 'styled-components'
-import { theme } from '../../assets/styles/theme'
 import { Helmet } from 'react-helmet'
+import { ThemeColorContext } from '../../providers/ThemeColorProvider'
 
 const HomeLayout = ({ children }) => {
+  const { theme } = useContext(ThemeColorContext)
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
