@@ -7,6 +7,7 @@ import {
   HeroImage,
   HeroText,
   Paragraph,
+  HeroScroll,
 } from './HeroSection.style'
 import Button from '../../atoms/Button/Button'
 import Header from '../../atoms/Header/Header'
@@ -63,7 +64,7 @@ const HeroSection = () => {
       targets: `${HeroImage} #pitcher`,
       translateY: [0, -10],
       translateX: [0, 5],
-      duration: 4000,
+      duration: 6000,
       loop: true,
       easing: 'linear',
       direction: 'alternate',
@@ -71,6 +72,7 @@ const HeroSection = () => {
   }, [])
   return (
     <HeroWrapper>
+      <HeroScroll>Przewiń</HeroScroll>
       <HeroImage>
         <LogoImage />
       </HeroImage>

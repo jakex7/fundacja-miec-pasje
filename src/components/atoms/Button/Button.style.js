@@ -26,6 +26,11 @@ export const StyledButton = styled.button`
     right: 0;
     top: 0;
     background-color: ${({ theme }) => theme.accent};
+    // background: linear-gradient(
+    //   0.25turn,
+    //   ${({ theme }) => theme.blue},
+    //   ${({ theme }) => theme.purple}
+    // );
     width: 100%;
     transform-origin: right;
     transform: scaleX(0.2);

@@ -1,27 +1,12 @@
 import React from 'react'
-import styled from 'styled-components'
 import Header from '../../atoms/Header/Header'
 import Accent from '../../atoms/Accent/Accent'
-
-const Wrapper = styled.article`
-  width: 100%;
-  padding: 5rem 3rem;
-  //padding: 5rem 4rem;
-  display: flex;
-  flex-direction: column;
-`
-const SectionTitle = styled.h4`
-  font-weight: 400;
-  color: ${({ theme }) => theme.accent};
-  margin: 0;
-`
-const TitleWrapper = styled.div`
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto 2rem;
-  padding: 1rem;
-  border-left: 3px solid ${({ theme }) => theme.accent};
-`
+import {
+  MainWrapper,
+  SectionTitle,
+  TitleWrapper,
+  Wrapper,
+} from './AboutSection.style'
 
 const AboutSection = () => {
   return (
@@ -35,12 +20,17 @@ const AboutSection = () => {
           </Accent>
         </Header>
       </TitleWrapper>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-        aliquid amet aut dolore, doloremque dolores doloribus esse impedit,
-        mollitia necessitatibus nihil numquam perspiciatis rem rerum sunt ullam
-        veritatis vitae voluptas?
-      </p>
+      <MainWrapper>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+          aliquid amet aut dolore, doloremque dolores doloribus esse impedit,
+          mollitia necessitatibus nihil numquam perspiciatis rem rerum sunt
+          ullam veritatis vitae voluptas?
+        </p>
+        <div>
+          <img src="" alt="" />
+        </div>
+      </MainWrapper>
     </Wrapper>
   )
 }

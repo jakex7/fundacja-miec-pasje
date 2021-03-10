@@ -23,7 +23,7 @@ export const HeroWrapper = styled.main`
     position: absolute;
     top: 0;
     width: 2px;
-    height: 100vh;
+    height: 100%;
     background-color: ${({ theme }) => theme.darkGray};
   }
 `
@@ -49,3 +49,14 @@ export const HeroImage = styled.div`
   }
 `
 export const Paragraph = styled.p``
+
+export const HeroScroll = styled.p`
+  writing-mode: vertical-lr;
+  font-size: 0.75rem;
+  position: absolute;
+  margin: 0;
+  left: calc(calc(3rem - 0.75rem) / 2);
+  bottom: 1rem;
+  opacity: 0.25;
+  cursor: pointer;
+`
