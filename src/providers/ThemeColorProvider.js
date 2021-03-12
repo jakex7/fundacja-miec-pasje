@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import {
-  defaultTheme,
   blueTheme,
-  purpleTheme,
+  defaultTheme,
   greenTheme,
+  purpleTheme,
 } from '../assets/styles/theme'
 
 export const ThemeColorContext = React.createContext({
@@ -13,10 +13,14 @@ export const ThemeColorContext = React.createContext({
 const ThemeColorProvider = ({ children }) => {
   const allThemes = [defaultTheme, blueTheme, purpleTheme, greenTheme]
   const [theme, setTheme] = useState(
-    allThemes[Math.floor(Math.random() * allThemes.length)]
+    defaultTheme
+    // allThemes[Math.floor(Math.random() * allThemes.length)]
   )
+  const handleSetTheme = index => {
+    setTheme(allThemes[index])
+  }
   return (
-    <ThemeColorContext.Provider value={{ theme: theme }}>
+    <ThemeColorContext.Provider value={{ theme, handleSetTheme }}>
       {children}
     </ThemeColorContext.Provider>
   )

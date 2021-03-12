@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import NavigationBar from '../organisms/NavigationBar/NavigationBar'
 import GlobalStyle from '../../assets/styles/GlobalStyle'
