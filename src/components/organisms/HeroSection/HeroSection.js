@@ -71,7 +71,7 @@ const HeroSection = () => {
     })
   }, [])
   return (
-    <HeroWrapper>
+    <HeroWrapper id="home">
       <HeroScroll>Przewiń</HeroScroll>
       <HeroImage>
         <LogoImage />

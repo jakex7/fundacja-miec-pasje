@@ -7,9 +7,9 @@ import {
   StyledDotsImage,
   TitleWrapper,
   Wrapper,
-} from './AboutSection.style'
+} from './EventsSection.style'
 
-const AboutSection = () => {
+const EventsSection = () => {
   return (
     <Wrapper id="o-nas">
       <TitleWrapper>
@@ -34,4 +34,4 @@ const AboutSection = () => {
   )
 }
 
-export default AboutSection
+export default EventsSection

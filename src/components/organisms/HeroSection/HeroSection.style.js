@@ -8,6 +8,7 @@ export const HeroWrapper = styled.main`
   justify-content: space-evenly;
   align-items: center;
   padding: calc(90px + 3rem) 4rem 3rem;
+  border: 1px solid ${({ theme }) => theme.darkGray};
 
   position: relative;
   &::before {

@@ -1,7 +1,7 @@
 export const defaultTheme = {
   // accent: '#FF5016', //original orange
   accent: '#ff6348',
-  lightGray: '#f0f2fa',
+  lightGray: 'rgba(247,248,253,0.97)',
   darkGray: 'rgba(150,150,150, .1)',
 }
 export const blueTheme = {
