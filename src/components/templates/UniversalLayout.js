@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
-import NavigationBar from '../organisms/NavigationBar/NavigationBar'
-import GlobalStyle from '../../assets/styles/GlobalStyle'
 import { ThemeProvider } from 'styled-components'
 import { Helmet } from 'react-helmet'
+import NavigationBar from '../organisms/NavigationBar/NavigationBar'
+import GlobalStyle from '../../assets/styles/GlobalStyle'
 import { ThemeColorContext } from '../../providers/ThemeColorProvider'
+import Footer from '../organisms/Footer/Footer'
 
 const UniversalLayout = ({ children }) => {
   const { theme } = useContext(ThemeColorContext)
@@ -20,6 +21,7 @@ const UniversalLayout = ({ children }) => {
       </Helmet>
       <NavigationBar />
       {children}
+      <Footer />
     </ThemeProvider>
   )
 }

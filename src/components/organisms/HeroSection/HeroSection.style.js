@@ -9,6 +9,7 @@ export const HeroWrapper = styled.main`
   align-items: center;
   padding: calc(90px + 3rem) 4rem 3rem;
   border: 1px solid ${({ theme }) => theme.darkGray};
+  box-shadow: ${({ theme }) => theme.shadow};
 
   position: relative;
   &::before {

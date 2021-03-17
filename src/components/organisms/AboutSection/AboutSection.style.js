@@ -24,6 +24,7 @@ export const TitleWrapper = styled.div`
 
 export const MainWrapper = styled.div`
   background-color: ${({ theme }) => theme.lightGray};
+  box-shadow: ${({ theme }) => theme.shadow};
   height: 100%;
   max-width: 900px;
   margin: 0 auto;
