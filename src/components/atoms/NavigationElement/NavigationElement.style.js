@@ -10,6 +10,7 @@ export const NavigationElementStyled = styled.li`
 export const StyledLink = styled(Link)`
   text-decoration: inherit;
   color: inherit;
+  cursor: pointer;
   padding: 1rem;
   position: relative;
 

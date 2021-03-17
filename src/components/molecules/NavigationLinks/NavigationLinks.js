@@ -5,7 +5,7 @@ import { NavigationLinksWrapper } from './NavigationLinks.style'
 const NavigationLinks = () => {
   return (
     <NavigationLinksWrapper>
-      <NavigationElement to={'/'} text={'O nas'} />
+      <NavigationElement to={'#o-nas'} text={'O nas'} native />
       <NavigationElement to={'/'} text={'Wydarzenia'} />
       <NavigationElement to={'/'} text={'Statut'} />
     </NavigationLinksWrapper>
