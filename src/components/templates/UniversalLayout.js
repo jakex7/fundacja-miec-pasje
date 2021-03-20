@@ -2,11 +2,20 @@ import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import { ThemeProvider } from 'styled-components'
 import { Helmet } from 'react-helmet'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import NavigationBar from '../organisms/NavigationBar/NavigationBar'
 import GlobalStyle from '../../assets/styles/GlobalStyle'
 import { ThemeColorContext } from '../../providers/ThemeColorProvider'
 import Footer from '../organisms/Footer/Footer'
 
+toast.configure({
+  position: 'bottom-right',
+  autoClose: 5000,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: false,
+})
 const UniversalLayout = ({ children }) => {
   const { theme } = useContext(ThemeColorContext)
   return (

@@ -7,21 +7,12 @@ import Button from '../../atoms/Button/Button'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 
 const initialFormState = {
   firstName: '',
   email: '',
   message: '',
 }
-toast.configure({
-  position: 'bottom-right',
-  autoClose: 5000,
-  closeOnClick: true,
-  pauseOnHover: true,
-  draggable: true,
-  progress: undefined,
-})
 const ContactSection = () => {
   const handleFormSubmit = (values, { resetForm }) => {
     console.log(values)
