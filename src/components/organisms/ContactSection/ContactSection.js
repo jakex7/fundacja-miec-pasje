@@ -17,30 +17,36 @@ const ContactSection = () => {
   const handleFormSubmit = (values, { resetForm }) => {
     console.log(values)
     resetForm()
-    toast('Wiadomość przesłana pomyślne', { type: 'success' })
+    toast('Wiadomość została wysłana 🚀', { type: 'success' })
   }
   const formik = useFormik({
     initialValues: initialFormState,
     validationSchema: Yup.object({
-      firstName: Yup.string().required('Wymagane'),
+      firstName: Yup.string().required('Imie jest wymagane'),
       email: Yup.string()
-        .email('Wprowadź poprawny adres email')
-        .required('Wymagane'),
+        .email('Adres e-mail jest nieprawidłowy')
+        .required('E-mail jest wymagany'),
       message: Yup.string()
         .min(10, 'Wiadomość jest zbyt krótka')
-        .required('Wymagane'),
+        .required('Wiadomość jest wymagana'),
     }),
     onSubmit: handleFormSubmit,
   })
   useEffect(() => {
     formik.touched.firstName && formik.errors.firstName
-      ? toast.dark('Imie jest wymagane', { toastId: 'firstName' })
+      ? toast.dark(formik.errors.firstName, {
+          toastId: 'firstName',
+          autoClose: false,
+        })
       : toast.dismiss('firstName')
     formik.touched.email && formik.errors.email
-      ? toast.dark('Wprowadź poprawne adres e-mail', { toastId: 'email' })
+      ? toast.dark(formik.errors.email, { toastId: 'email', autoClose: false })
       : toast.dismiss('email')
     formik.touched.message && formik.errors.message
-      ? toast.dark('Wiadomość jest zbyt krótka', { toastId: 'message' })
+      ? toast.dark(formik.errors.message, {
+          toastId: 'message',
+          autoClose: false,
+        })
       : toast.dismiss('message')
   }, [formik.touched, formik.errors])
   return (
