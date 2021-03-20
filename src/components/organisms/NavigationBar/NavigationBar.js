@@ -1,4 +1,5 @@
 import React from 'react'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import NavigationLinks from '../../molecules/NavigationLinks/NavigationLinks'
 import { LogoStyled, NavWrapper } from './NavigationBar.style'
 import Accent from '../../atoms/Accent/Accent'
@@ -11,7 +12,7 @@ const NavigationBar = () => {
         Mieć <Accent>Pasje</Accent>
       </LogoStyled>
       <NavigationLinks />
-      <Button text="Kontakt" />
+      <Button text="Kontakt" to={'/#kontakt'} as={AnchorLink} />
     </NavWrapper>
   )
 }

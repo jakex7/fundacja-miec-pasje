@@ -12,9 +12,11 @@ export const StyledButton = styled.button`
   transition: color 0.3s ease-in;
   font-size: 1rem;
   z-index: 101;
+  color: #262626;
+  text-decoration: none;
 
   &:hover {
-    color: #fff;
+    color: ${({ accent }) => (accent ? '#262626' : '#fff')};
     &::after {
       transform: scaleX(1);
     }
@@ -25,12 +27,8 @@ export const StyledButton = styled.button`
     position: absolute;
     right: 0;
     top: 0;
-    background-color: ${({ theme }) => theme.accent};
-    // background: linear-gradient(
-    //   0.25turn,
-    //   ${({ theme }) => theme.blue},
-    //   ${({ theme }) => theme.purple}
-    // );
+    background-color: ${({ theme, accent }) =>
+      accent ? accent : theme.accent};
     width: 100%;
     transform-origin: right;
     transform: scaleX(0.2);

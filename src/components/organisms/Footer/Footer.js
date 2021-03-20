@@ -50,7 +50,11 @@ const Footer = () => {
           </Row>
         </Column>
         <Claim>
-          Made with ❤️ by <a href="https://jakubgrzywacz.pl/">Jakub Grzywacz</a>
+          Made with{' '}
+          <span role="img" aria-label="love">
+            ❤
+          </span>
+          ️ by <a href="https://jakubgrzywacz.pl/">Jakub Grzywacz</a>
         </Claim>
       </ContentContainer>
     </Wrapper>
