@@ -8,20 +8,6 @@ export const Wrapper = styled.article`
   display: flex;
   flex-direction: column;
 `
-export const SectionTitle = styled.a`
-  display: inline-block;
-  text-decoration: none;
-  font-weight: 400;
-  color: ${({ theme }) => theme.accent};
-  margin: 0 0 1rem;
-`
-export const TitleWrapper = styled.div`
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto 2rem;
-  padding: 1rem;
-`
-
 export const MainWrapper = styled.div`
   background-color: ${({ theme }) => theme.lightGray};
   box-shadow: ${({ theme }) => theme.shadow};

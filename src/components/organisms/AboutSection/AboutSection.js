@@ -1,26 +1,19 @@
 import React from 'react'
-import Header from '../../atoms/Header/Header'
 import Accent from '../../atoms/Accent/Accent'
-import {
-  MainWrapper,
-  SectionTitle,
-  StyledDotsImage,
-  TitleWrapper,
-  Wrapper,
-} from './AboutSection.style'
+import { MainWrapper, StyledDotsImage, Wrapper } from './AboutSection.style'
+import SectionTitle from '../../molecules/SectionTitle/SectionTitle'
 
 const AboutSection = () => {
   return (
     <Wrapper id="o-nas">
-      <TitleWrapper>
-        <SectionTitle href="#o-nas">O nas</SectionTitle>
-        <Header>
+      <SectionTitle title="O nas">
+        <>
           Lorem ipsum dolor sit amet, consectetur <br /> adipisicing elit.&nbsp;
           <Accent underline withoutColor>
             Maiores, molestiae!
           </Accent>
-        </Header>
-      </TitleWrapper>
+        </>
+      </SectionTitle>
       <MainWrapper>
         <StyledDotsImage />
         <p>
