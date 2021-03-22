@@ -1,31 +1,11 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
-import * as React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import * as React from 'react'
+import PropTypes from 'prop-types'
+import { Helmet } from 'react-helmet'
 
 function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-          }
-        }
-      }
-    `
-  )
-
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const defaultTitle = 'Fundacja Mieć Pasje'
+  const metaDescription =
+    'Głównym celem fundacji jest prowadzenie działalności kulturalnej z zakresu sztuki oraz ochrony dóbr kultury i dziedzictwa narodowego, wspieranie rozwoju twórczości ludowej, rzemieślniczej i rękodzieła, odtwarzanie dorobku ginących zawodów.'
 
   return (
     <Helmet
