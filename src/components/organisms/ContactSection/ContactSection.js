@@ -7,6 +7,8 @@ import Button from '../../atoms/Button/Button'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { toast } from 'react-toastify'
+import axios from 'axios'
+import { SEND_EMAIL_URL } from '../../../helpers/api'
 
 const initialFormState = {
   firstName: '',
@@ -15,9 +17,24 @@ const initialFormState = {
 }
 const ContactSection = () => {
   const handleFormSubmit = (values, { resetForm }) => {
-    console.log(values)
-    resetForm()
-    toast('Wiadomość została wysłana 🚀', { type: 'success' })
+    axios
+      .post(SEND_EMAIL_URL, {
+        message: {
+          from: values.email,
+          name: values.firstName,
+          content: values.message,
+        },
+      })
+      .then(() => {
+        resetForm()
+        toast('Wiadomość została wysłana 🚀', { type: 'success' })
+      })
+      .catch(() => {
+        toast(
+          'Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później',
+          { type: 'error' }
+        )
+      })
   }
   const formik = useFormik({
     initialValues: initialFormState,
