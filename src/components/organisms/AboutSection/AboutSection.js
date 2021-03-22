@@ -1,5 +1,4 @@
 import React from 'react'
-import Accent from '../../atoms/Accent/Accent'
 import { MainWrapper, StyledDotsImage, Wrapper } from './AboutSection.style'
 import SectionTitle from '../../molecules/SectionTitle/SectionTitle'
 
