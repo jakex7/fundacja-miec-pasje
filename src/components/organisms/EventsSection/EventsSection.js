@@ -28,7 +28,7 @@ const EventsSection = () => {
   const settings = {
     dots: true,
     speed: 500,
-    infinite: false,
+    infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
     draggable: false,
