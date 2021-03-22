@@ -39,6 +39,14 @@ module.exports = {
       },
     },
     `gatsby-plugin-anchor-links`,
+    {
+      resolve: `gatsby-source-datocms`,
+      options: {
+        apiToken: `7b62658a4308ba3f455b4f15066d22`,
+        preview: false,
+        disableLiveReload: false,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

@@ -7,3 +7,16 @@ export const Wrapper = styled.article`
   display: flex;
   flex-direction: column;
 `
+
+export const StyledArrow = styled.div`
+  svg {
+    width: 32px;
+    fill: ${({ theme }) => theme.error};
+  }
+  width: 32px;
+  height: 32px;
+  margin: 0 -1rem;
+  &::before {
+    display: none;
+  }
+`

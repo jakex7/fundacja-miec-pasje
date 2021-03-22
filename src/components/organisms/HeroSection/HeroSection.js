@@ -12,7 +12,7 @@ import {
 import Button from '../../atoms/Button/Button'
 import Header from '../../atoms/Header/Header'
 
-const HeroSection = () => {
+const HeroSection = ({ content }) => {
   useEffect(() => {
     const tl = anime.timeline({
       easing: 'easeInOutExpo',
@@ -81,10 +81,7 @@ const HeroSection = () => {
           Fundacja <br />
           Mieć <Accent underline>Pasje</Accent>
         </Header>
-        <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
-          commodi est inventore nesciunt? Accusamus expedita.
-        </Paragraph>
+        <Paragraph>{content}</Paragraph>
         <Button text="Więcej informacji" />
       </HeroText>
     </HeroWrapper>
