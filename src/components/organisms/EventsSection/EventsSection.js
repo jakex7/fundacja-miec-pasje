@@ -20,7 +20,7 @@ const EventWrapper = styled.div`
   border: 1px solid ${({ theme }) => theme.darkGray};
 `
 const Top = styled.div``
-const Day = styled.h3`
+const Day = styled.span`
   margin: 0;
   font-weight: 300;
   font-size: 2.5rem;

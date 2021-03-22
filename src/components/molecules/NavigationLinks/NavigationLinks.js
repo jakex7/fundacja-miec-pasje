@@ -6,7 +6,7 @@ const NavigationLinks = () => {
   return (
     <NavigationLinksWrapper>
       <NavigationElement to={'/#o-nas'} text={'O nas'} anchor />
-      <NavigationElement to={'/'} text={'Wydarzenia'} />
+      <NavigationElement to={'/#wydarzenia'} text={'Wydarzenia'} anchor />
       <NavigationElement to={'/statut'} text={'Statut'} />
     </NavigationLinksWrapper>
   )
