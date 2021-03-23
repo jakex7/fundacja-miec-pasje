@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import anime from 'animejs'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
+
 import LogoImage from '../../../assets/images/logo.svg'
 import Accent from '../../atoms/Accent/Accent'
 import {
@@ -45,7 +47,7 @@ const HeroSection = ({ content }) => {
       )
       .add(
         {
-          targets: `${HeroText} button`,
+          targets: `${HeroText} a`,
           opacity: [0, 1],
           translateY: [100, 0],
         },
@@ -82,7 +84,7 @@ const HeroSection = ({ content }) => {
           Mieć <Accent underline>Pasje</Accent>
         </Header>
         <Paragraph>{content}</Paragraph>
-        <Button text="Więcej informacji" />
+        <Button text="Więcej informacji" as={AnchorLink} to="/#o-nas" />
       </HeroText>
     </HeroWrapper>
   )
