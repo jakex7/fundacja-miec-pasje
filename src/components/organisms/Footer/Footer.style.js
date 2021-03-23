@@ -55,10 +55,14 @@ export const List = styled.ul`
   margin: 0;
   padding: 0;
   text-align: right;
-  li {
-    padding: 0.2rem;
-    color: rgba(0, 0, 0, 0.6);
-    cursor: pointer;
+`
+export const ListElement = styled.li`
+  padding: 0.2rem;
+  color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  a {
+    text-decoration: none;
+    color: inherit;
   }
 `
 export const Claim = styled.div`

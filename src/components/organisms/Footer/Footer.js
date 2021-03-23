@@ -5,14 +5,29 @@ import {
   Column,
   ContentContainer,
   List,
+  ListElement,
   Row,
   StyledLogo,
   StyledLogoText,
   StyledParagraph,
   Wrapper,
 } from './Footer.style'
+import { graphql, Link, useStaticQuery } from 'gatsby'
 
 const Footer = () => {
+  const data = useStaticQuery(graphql`
+    query loadAllPagesInfoQuery {
+      allDatoCmsPage {
+        edges {
+          node {
+            id
+            title
+            slug
+          }
+        }
+      }
+    }
+  `)
   return (
     <Wrapper>
       <ContentContainer>
@@ -41,11 +56,16 @@ const Footer = () => {
         <Column>
           <Row right>
             <List>
-              <li>Strona główna</li>
-              <li>O nas</li>
-              <li>Wydarzenia</li>
-              <li>Statut</li>
-              <li>Kontakt</li>
+              <ListElement>
+                <Link to="/">Strona główna</Link>
+              </ListElement>
+              {data.allDatoCmsPage.edges.map(
+                ({ node: { id, title, slug } }) => (
+                  <ListElement key={id}>
+                    <Link to={slug}>{title}</Link>
+                  </ListElement>
+                )
+              )}
             </List>
           </Row>
         </Column>
