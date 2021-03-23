@@ -62,7 +62,7 @@ const Footer = () => {
               {data.allDatoCmsPage.edges.map(
                 ({ node: { id, title, slug } }) => (
                   <ListElement key={id}>
-                    <Link to={slug}>{title}</Link>
+                    <Link to={`/${slug}`}>{title}</Link>
                   </ListElement>
                 )
               )}
