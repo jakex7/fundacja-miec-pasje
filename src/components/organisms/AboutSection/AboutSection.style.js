@@ -17,7 +17,7 @@ export const MainWrapper = styled.div`
   position: relative;
 
   border: 1px solid ${({ theme }) => theme.darkGray};
-  p {
+  div {
     padding: 2rem 3rem;
   }
 `

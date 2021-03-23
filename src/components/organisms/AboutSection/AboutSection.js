@@ -10,7 +10,7 @@ const AboutSection = ({ header, content }) => {
       </SectionTitle>
       <MainWrapper>
         <StyledDotsImage />
-        <p>{content}</p>
+        <div dangerouslySetInnerHTML={{ __html: content }} />
       </MainWrapper>
     </Wrapper>
   )
