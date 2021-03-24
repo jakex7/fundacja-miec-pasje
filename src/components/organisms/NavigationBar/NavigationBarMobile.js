@@ -4,8 +4,6 @@ import Accent from '../../atoms/Accent/Accent'
 import MenuOpen from '../../../assets/images/menu-outline.svg'
 import MenuClose from '../../../assets/images/close-outline.svg'
 import styled from 'styled-components'
-import NavigationElement from '../../atoms/NavigationElement/NavigationElement'
-import { StyledLink } from '../../atoms/NavigationElement/NavigationElement.style'
 import NavigationLinks from '../../molecules/NavigationLinks/NavigationLinks'
 
 const OpenButton = styled.div`
