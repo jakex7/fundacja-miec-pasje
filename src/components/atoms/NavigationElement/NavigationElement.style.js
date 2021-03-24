@@ -2,7 +2,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 export const NavigationElementStyled = styled.li`
-  margin-right: 1rem;
+  margin-right: ${({ isMobile }) => (isMobile ? '0' : '1rem')};
   &:last-of-type {
     margin-right: unset;
   }
@@ -13,6 +13,7 @@ export const StyledLink = styled(Link)`
   cursor: pointer;
   padding: 1rem;
   position: relative;
+  display: block;
 
   &:hover::after {
     transform: scaleY(1) translateY(-5px);

@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import Input from '../../atoms/Input/Input'
+import mediaMaxWidth from '../../../helpers/mediaMaxWidth'
 
 const Wrapper = styled.div`
   display: flex;
@@ -9,6 +10,13 @@ const Wrapper = styled.div`
   width: 100%;
   &:not(:first-child) {
     margin-left: 2rem;
+    ${mediaMaxWidth(
+      700,
+      css`
+        margin-top: 1rem;
+        margin-left: 0;
+      `
+    )}
   }
 `
 const StyledTextarea = styled.textarea`

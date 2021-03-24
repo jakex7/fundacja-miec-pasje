@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const EventWrapper = styled.div`
   margin: 1rem;
   box-sizing: border-box;
-  width: calc(100% - 2rem);
+  max-width: calc(100% - 2rem);
   min-height: 300px;
   display: flex;
   flex-direction: column;

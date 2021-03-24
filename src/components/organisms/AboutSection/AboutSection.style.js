@@ -1,19 +1,26 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import DotsImage from '../../../assets/images/dots.svg'
+import mediaMaxWidth from '../../../helpers/mediaMaxWidth'
 
 export const Wrapper = styled.article`
   width: 100%;
   padding: 5rem 3rem;
-  //padding: 5rem 4rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  ${mediaMaxWidth(
+    700,
+    css`
+      padding: 5rem 1rem;
+    `
+  )}
 `
 export const MainWrapper = styled.div`
   background-color: ${({ theme }) => theme.lightGray};
   box-shadow: ${({ theme }) => theme.shadow};
   height: 100%;
   max-width: 900px;
-  margin: 0 auto;
   position: relative;
 
   border: 1px solid ${({ theme }) => theme.darkGray};

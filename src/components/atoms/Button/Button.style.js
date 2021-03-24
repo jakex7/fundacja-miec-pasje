@@ -11,7 +11,7 @@ export const StyledButton = styled.button`
   cursor: pointer;
   transition: color 0.3s ease-in;
   font-size: 1rem;
-  z-index: 101;
+  z-index: 1;
   color: #262626;
   text-decoration: none;
 

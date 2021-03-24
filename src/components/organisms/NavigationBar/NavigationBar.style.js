@@ -16,6 +16,7 @@ export const NavWrapper = styled.nav`
 `
 
 export const LogoStyled = styled(Link)`
+  cursor: pointer;
   color: inherit;
   text-decoration: inherit;
   font-size: 1.8rem;

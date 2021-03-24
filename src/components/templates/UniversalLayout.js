@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { ThemeProvider } from 'styled-components'
 import { Helmet } from 'react-helmet'
@@ -8,6 +8,8 @@ import NavigationBar from '../organisms/NavigationBar/NavigationBar'
 import GlobalStyle from '../../assets/styles/GlobalStyle'
 import { ThemeColorContext } from '../../providers/ThemeColorProvider'
 import Footer from '../organisms/Footer/Footer'
+import { useWindowSize } from '../../hooks/useWindowSize'
+import NavigationBarMobile from '../organisms/NavigationBar/NavigationBarMobile'
 
 toast.configure({
   position: 'bottom-right',
@@ -18,6 +20,7 @@ toast.configure({
 })
 const UniversalLayout = ({ children }) => {
   const { theme } = useContext(ThemeColorContext)
+  const windowSize = useWindowSize()
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
@@ -30,7 +33,7 @@ const UniversalLayout = ({ children }) => {
           href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,800;1,400&display=swap"
         />
       </Helmet>
-      <NavigationBar />
+      {windowSize.width >= 900 ? <NavigationBar /> : <NavigationBarMobile />}
       {children}
       <Footer />
     </ThemeProvider>

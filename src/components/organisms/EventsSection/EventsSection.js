@@ -8,9 +8,11 @@ import SectionTitle from '../../molecules/SectionTitle/SectionTitle'
 import Event from '../../molecules/Event/Event'
 import ArrowLeft from '../../../assets/images/arrow-circle-left-outline.svg'
 import ArrowRight from '../../../assets/images/arrow-circle-right-outline.svg'
+import { useWindowSize } from '../../../hooks/useWindowSize'
 
 const EventsSection = () => {
   const [events, setEvents] = useState([])
+  const windowSize = useWindowSize()
   const data = useStaticQuery(graphql`
     query Events {
       allDatoCmsEvent(sort: { order: ASC, fields: datetime }) {
@@ -29,19 +31,22 @@ const EventsSection = () => {
     dots: true,
     speed: 500,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow:
+      windowSize.width >= 1100 ? 3 : windowSize.width >= 700 ? 2 : 1,
     slidesToScroll: 1,
-    draggable: false,
-    nextArrow: (
-      <StyledArrow>
-        <ArrowRight />
-      </StyledArrow>
-    ),
-    prevArrow: (
-      <StyledArrow>
-        <ArrowLeft />
-      </StyledArrow>
-    ),
+    draggable: windowSize.width < 1100,
+    nextArrow:
+      windowSize.width >= 1100 ? (
+        <StyledArrow>
+          <ArrowRight />
+        </StyledArrow>
+      ) : null,
+    prevArrow:
+      windowSize.width >= 1100 ? (
+        <StyledArrow>
+          <ArrowLeft />
+        </StyledArrow>
+      ) : null,
   }
   useEffect(() => {
     setEvents(

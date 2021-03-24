@@ -2,9 +2,9 @@ import React from 'react'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { NavigationElementStyled, StyledLink } from './NavigationElement.style'
 
-const NavigationElement = ({ to, text, anchor }) => {
+const NavigationElement = ({ to, text, anchor, isMobile }) => {
   return (
-    <NavigationElementStyled>
+    <NavigationElementStyled isMobile={isMobile}>
       {anchor ? (
         <StyledLink to={to} as={AnchorLink} title={text} />
       ) : (

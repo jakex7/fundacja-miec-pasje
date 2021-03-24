@@ -2,12 +2,30 @@ import React from 'react'
 import NavigationElement from '../../atoms/NavigationElement/NavigationElement'
 import { NavigationLinksWrapper } from './NavigationLinks.style'
 
-const NavigationLinks = () => {
+const NavigationLinks = ({ isMobile }) => {
   return (
-    <NavigationLinksWrapper>
-      <NavigationElement to={'/#o-nas'} text={'O nas'} anchor />
-      <NavigationElement to={'/#wydarzenia'} text={'Wydarzenia'} anchor />
-      <NavigationElement to={'/statut'} text={'Statut'} />
+    <NavigationLinksWrapper isMobile={isMobile}>
+      <NavigationElement
+        to={'/#o-nas'}
+        text={'O nas'}
+        anchor
+        isMobile={isMobile}
+      />
+      <NavigationElement
+        to={'/#wydarzenia'}
+        text={'Wydarzenia'}
+        anchor
+        isMobile={isMobile}
+      />
+      <NavigationElement to={'/statut'} text={'Statut'} isMobile={isMobile} />
+      {isMobile && (
+        <NavigationElement
+          to={'/#kontakt'}
+          text={'Kontakt'}
+          anchor
+          isMobile={isMobile}
+        />
+      )}
     </NavigationLinksWrapper>
   )
 }

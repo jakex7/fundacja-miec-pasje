@@ -1,5 +1,6 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import LogoImage from '../../../assets/images/logo.svg'
+import mediaMaxWidth from '../../../helpers/mediaMaxWidth'
 
 export const Wrapper = styled.div`
   margin-top: 2rem;
@@ -12,13 +13,18 @@ export const Wrapper = styled.div`
 export const ContentContainer = styled.footer`
   width: 80%;
   max-width: 1000px;
-  //margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  //padding: 4rem 2rem;
   margin: 0 auto;
   position: relative;
+
+  ${mediaMaxWidth(
+    700,
+    css`
+      flex-direction: column;
+    `
+  )}
 `
 
 export const Column = styled.div`
@@ -27,6 +33,12 @@ export const Column = styled.div`
   &:not(:first-of-type):not(:nth-last-of-type(2)) {
     margin: 0 2rem;
   }
+  ${mediaMaxWidth(
+    700,
+    css`
+      margin-bottom: 2rem;
+    `
+  )}
 `
 export const Row = styled.div`
   display: flex;
@@ -55,6 +67,12 @@ export const List = styled.ul`
   margin: 0;
   padding: 0;
   text-align: right;
+  ${mediaMaxWidth(
+    700,
+    css`
+      text-align: left;
+    `
+  )}
 `
 export const ListElement = styled.li`
   padding: 0.2rem;

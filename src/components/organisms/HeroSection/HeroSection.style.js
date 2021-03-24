@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import mediaMaxWidth from '../../../helpers/mediaMaxWidth'
 
 export const HeroWrapper = styled.main`
   min-height: 500px;
@@ -10,6 +11,13 @@ export const HeroWrapper = styled.main`
   padding: calc(90px + 3rem) 4rem 3rem;
   border: 1px solid ${({ theme }) => theme.darkGray};
   box-shadow: ${({ theme }) => theme.shadow};
+  ${mediaMaxWidth(
+    700,
+    css`
+      flex-direction: column;
+      justify-content: center;
+    `
+  )}
 
   position: relative;
   &::before {
@@ -32,6 +40,10 @@ export const HeroWrapper = styled.main`
 
 export const HeroText = styled.div`
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   margin-left: 1rem;
   max-width: 350px;
 `
@@ -42,9 +54,14 @@ export const HeroImage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  ${mediaMaxWidth(
+    700,
+    css`
+      display: none;
+    `
+  )}
   svg {
     width: 100%;
-    //width: calc(100% - 1rem);
     path {
       stroke-width: 10;
     }

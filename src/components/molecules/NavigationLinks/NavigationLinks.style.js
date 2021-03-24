@@ -5,7 +5,7 @@ export const NavigationLinksWrapper = styled.ul`
   margin: 0;
   padding: 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'row')};
   justify-content: center;
   align-items: center;
 `
