@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { ThemeProvider } from 'styled-components'
 import { Helmet } from 'react-helmet'
 import { toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.min.css'
+// import 'react-toastify/dist/ReactToastify.min.css'
 import NavigationBar from '../organisms/NavigationBar/NavigationBar'
 import GlobalStyle from '../../assets/styles/GlobalStyle'
 import { ThemeColorContext } from '../../providers/ThemeColorProvider'
@@ -31,6 +31,10 @@ const UniversalLayout = ({ children }) => {
           media="print"
           onLoad="this.onload=null;this.removeAttribute('media');"
           href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,800;1,400&display=swap"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/react-toastify@7.0.3/dist/ReactToastify.min.css"
         />
       </Helmet>
       {windowSize.width >= 900 ? <NavigationBar /> : <NavigationBarMobile />}
