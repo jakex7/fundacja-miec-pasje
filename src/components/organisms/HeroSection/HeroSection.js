@@ -3,6 +3,7 @@ import anime from 'animejs'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 
 import LogoImage from '../../../assets/images/logo.svg'
+import ArrowDown from '../../../assets/images/arrowhead-down-outline.svg'
 import Accent from '../../atoms/Accent/Accent'
 import {
   HeroWrapper,
@@ -74,7 +75,9 @@ const HeroSection = ({ content }) => {
   }, [])
   return (
     <HeroWrapper id="home">
-      <HeroScroll>Przewiń</HeroScroll>
+      <HeroScroll as={AnchorLink} to="/#o-nas">
+        <ArrowDown />
+      </HeroScroll>
       <HeroImage>
         <LogoImage />
       </HeroImage>

@@ -69,13 +69,15 @@ export const HeroImage = styled.div`
 `
 export const Paragraph = styled.p``
 
-export const HeroScroll = styled.p`
-  writing-mode: vertical-lr;
+export const HeroScroll = styled.div`
   font-size: 0.75rem;
   position: absolute;
   margin: 0;
-  left: calc(calc(3rem - 0.75rem) / 2);
+  left: calc(calc(3rem - 28px) / 2);
   bottom: 1rem;
   opacity: 0.25;
   cursor: pointer;
+  svg {
+    width: 28px;
+  }
 `
