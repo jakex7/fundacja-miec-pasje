@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Fundacja Mieć Pasje`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Głównym celem jest działalność kulturalna z zakresu sztuki oraz ochrony dóbr kultury i dziedzictwa narodowego, wspieranie rozwoju twórczości ludowej, rzemieślniczej i rękodzieła a także odtwarzanie dorobku ginących zawodów.`,
     author: `@k7grzywacz`,
   },
   plugins: [
