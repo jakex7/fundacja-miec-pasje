@@ -3,7 +3,7 @@ import Slider from 'react-slick'
 import { graphql, useStaticQuery } from 'gatsby'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import { StyledArrow, Wrapper } from './EventsSection.style'
+import { StyledArrow, StyledError, Wrapper } from './EventsSection.style'
 import SectionTitle from '../../molecules/SectionTitle/SectionTitle'
 import Event from '../../molecules/Event/Event'
 import ArrowLeft from '../../../assets/images/arrow-circle-left-outline.svg'
@@ -65,17 +65,24 @@ const EventsSection = () => {
       <SectionTitle title="Wydarzenia">
         <>Nadchodzące wydarzenia</>
       </SectionTitle>
-      <Slider {...settings}>
-        {events.map(({ title, id, datetime, location }) => (
-          <Event
-            key={id}
-            title={title}
-            id={id}
-            datetime={datetime}
-            location={location}
-          />
-        ))}
-      </Slider>
+      {events.length > 0 ? (
+        <Slider {...settings}>
+          {events.map(({ title, id, datetime, location }) => (
+            <Event
+              key={id}
+              title={title}
+              id={id}
+              datetime={datetime}
+              location={location}
+            />
+          ))}
+        </Slider>
+      ) : (
+        <StyledError>
+          W związku z sytuacją epidemiologiczną tymczasowo nie ma zaplanowanych
+          wydarzeń
+        </StyledError>
+      )}
     </Wrapper>
   )
 }

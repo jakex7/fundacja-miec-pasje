@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import UniversalLayout from './UniversalLayout'
 import ThemeColorProvider from '../../providers/ThemeColorProvider'
@@ -30,10 +29,6 @@ const SitesLayout = ({ pageContext: { title, slug, content } }) => {
       </UniversalLayout>
     </ThemeColorProvider>
   )
-}
-
-SitesLayout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default SitesLayout

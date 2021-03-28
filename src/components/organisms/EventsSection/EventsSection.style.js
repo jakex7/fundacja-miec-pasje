@@ -20,3 +20,6 @@ export const StyledArrow = styled.div`
     display: none;
   }
 `
+export const StyledError = styled.p`
+  text-align: center;
+`
