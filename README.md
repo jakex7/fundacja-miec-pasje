@@ -4,11 +4,12 @@
   </a>
   
   <h1 align="center">
-    Website (front-end layer) made for Fundacja Mieć Pasje
+    Fundacja Mieć Pasje
   </h1>
+  Website (front-end layer) made for Fundacja Mieć Pasje
 </p>
 
-## Built With
+## 🛠 Built With
 
 This application was built with [Gatsby](https://www.gatsbyjs.com/)
 
