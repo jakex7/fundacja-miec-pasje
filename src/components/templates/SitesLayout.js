@@ -4,6 +4,7 @@ import UniversalLayout from './UniversalLayout'
 import ThemeColorProvider from '../../providers/ThemeColorProvider'
 import SEO from '../seo'
 import Header from '../atoms/Header/Header'
+import Footer from '../organisms/Footer/Footer'
 
 const Wrapper = styled.div`
   margin-top: 90px;
@@ -19,13 +20,14 @@ const SitesLayout = ({ pageContext: { title, slug, content } }) => {
   return (
     <ThemeColorProvider>
       <UniversalLayout>
+        <SEO title={title} />
         <Wrapper>
-          <SEO title={title} />
           <InnerWrapper id={slug}>
             <Header>{title}</Header>
             <div dangerouslySetInnerHTML={{ __html: content }} />
           </InnerWrapper>
         </Wrapper>
+        <Footer />
       </UniversalLayout>
     </ThemeColorProvider>
   )
